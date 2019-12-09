@@ -35,4 +35,4 @@ for(i in 1:(timesteps-1)){
 simNn<-data.frame(time=1:length(Ns),N=Ns)
 simMn<-data.frame(time=1:length(Ms),N=Ms)
 
-ggplot(simNn, aes(x=time, y=N)) + geom_line(color = "blue") + geom_line(data = simMn, color = "red") + theme_classic()
+ggplot(simNn, aes(x=time, y=N)) + geom_line(color = "blue") + geom_line(data = simMn, color = "red") + theme_classic() + xlab("Time") + ylab("Number of Cells")
