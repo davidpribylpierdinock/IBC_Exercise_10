@@ -35,4 +35,7 @@ for(i in 1:(timesteps-1)){
 simNn<-data.frame(time=1:length(Ns),N=Ns)
 simMn<-data.frame(time=1:length(Ms),N=Ms)
 
-ggplot(simNn, aes(x=time, y=N)) + geom_line(color = "blue") + geom_line(data = simMn, color = "red") + theme_classic() + xlab("Time") + ylab("Number of Cells")
+ggplot() +
+  geom_line(data = simNn, aes(x = time, y = N, color = "Wild-type"), size = 1.5) + 
+  geom_line(data = simMn, aes(x = time, y = N, color = "Mutant"), size = 1.5) + 
+  theme_classic() + xlab("Time") + ylab("Number of Cells") + labs(color = "Cell Type")
